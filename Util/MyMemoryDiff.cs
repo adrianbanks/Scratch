@@ -12,15 +12,15 @@ namespace Scratch
         private readonly string message;
         private readonly MyMemory start;
         private bool disposed;
-        
+
         /// <summary>
         /// Creates a new instance that will output the memory difference to the console.
         /// </summary>
         public MyMemoryDiff() : this(null)
         {}
-        
+
         /// <summary>
-        /// Creates a new instance with a message that will be output 
+        /// Creates a new instance with a message that will be output
         /// to the console along with the memory difference.
         /// </summary>
         public MyMemoryDiff(string message)
@@ -32,12 +32,12 @@ namespace Scratch
             this.message = message;
             this.start = MyMemory.Now();
         }
-        
+
         ~MyMemoryDiff()
         {
             Dispose(false);
         }
-        
+
         void IDisposable.Dispose()
         {
             Dispose(true);

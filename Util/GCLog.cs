@@ -37,7 +37,7 @@ namespace Scratch
                 Console.WriteLine("    GC0: {0}", GC.CollectionCount(0));
                 Console.WriteLine("    GC1: {0}", GC.CollectionCount(1));
                 Console.WriteLine("    GC2: {0}", GC.CollectionCount(2));
-                
+
                 if (!AppDomain.CurrentDomain.IsFinalizingForUnload() && !Environment.HasShutdownStarted)
                 {
                     new GCLog();

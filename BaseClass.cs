@@ -57,7 +57,7 @@ namespace Scratch
             if (e.Data.Count > 0)
             {
                 WL(new string('-', 20));
-                
+
                 foreach (DictionaryEntry entry in e.Data)
                 {
                     WL("   {0}: {1}", entry.Key, entry.Value);
@@ -67,7 +67,7 @@ namespace Scratch
             WL(new string('-', 70));
 
             Exception baseException = e.GetBaseException();
-            
+
             if (baseException != e)
             {
                 WE(baseException);
@@ -87,7 +87,7 @@ namespace Scratch
         /// <summary>
         /// Signals a breakpoint to an attached debugger.
         /// </summary>
-        protected static void Break() 
+        protected static void Break()
         {
             Debugger.Break();
         }

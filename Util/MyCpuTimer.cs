@@ -6,7 +6,7 @@ namespace Scratch
     /// A timer that times the elapsed CPU time.
     /// </summary>
     /// <remarks>
-    /// This uses the current application domain timer 
+    /// This uses the current application domain timer
     /// which gets paused when the threads are not running.
     /// </remarks>
     /// <seealso cref="MyWallTimer"/>
@@ -23,7 +23,7 @@ namespace Scratch
         {}
 
         /// <summary>
-        /// Creates a new instance with a message that will be output 
+        /// Creates a new instance with a message that will be output
         /// to the console along with the CPU time.
         /// </summary>
         public MyCpuTimer(string message)
@@ -32,12 +32,12 @@ namespace Scratch
             this.message = message;
             this.cpuTime = AppDomain.CurrentDomain.MonitoringTotalProcessorTime;
         }
-        
+
         ~MyCpuTimer()
         {
             Dispose(false);
         }
-        
+
         void IDisposable.Dispose()
         {
             Dispose(true);

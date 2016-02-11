@@ -5,7 +5,7 @@ using System.Globalization;
 namespace Scratch
 {
     /// <summary>
-    /// A class that can output information about the 
+    /// A class that can output information about the
     /// memory usage of the current process.
     /// </summary>
     public sealed class MyMemory

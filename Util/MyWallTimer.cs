@@ -12,7 +12,7 @@ namespace Scratch
         private readonly string message;
         private readonly Stopwatch stopwatch;
         private bool disposed;
-        
+
         /// <summary>
         /// Creates a new instance that will output the wall time to the console.
         /// </summary>
@@ -20,7 +20,7 @@ namespace Scratch
         {}
 
         /// <summary>
-        /// Creates a new instance with a message that will be output 
+        /// Creates a new instance with a message that will be output
         /// to the console along with the CPU time.
         /// </summary>
         public MyWallTimer(string message)
@@ -28,12 +28,12 @@ namespace Scratch
             this.message = message;
             this.stopwatch = Stopwatch.StartNew();
         }
-        
+
         ~MyWallTimer()
         {
             Dispose(false);
         }
-        
+
         void IDisposable.Dispose()
         {
             Dispose(true);
@@ -45,7 +45,7 @@ namespace Scratch
             if (!disposed)
             {
                 stopwatch.Stop();
-                
+
                 if (disposing)
                 {
                     if (!string.IsNullOrEmpty(message))
