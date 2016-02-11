@@ -13,18 +13,18 @@ namespace Scratch
         /// <summary>
         /// The current peak memory.
         /// </summary>
-        public long PeakMemory{get;private set;}
+        public long PeakMemory { get; }
 
         /// <summary>
         /// The current memory.
         /// </summary>
-        public long CurrentMemory{get;private set;}
+        public long CurrentMemory { get; }
 
         private MyMemory()
         {
             Process processInfo = Process.GetCurrentProcess();
-            this.PeakMemory = (processInfo.PeakWorkingSet64);
-            this.CurrentMemory = (processInfo.WorkingSet64);
+            PeakMemory = processInfo.PeakWorkingSet64;
+            CurrentMemory = processInfo.WorkingSet64;
         }
 
         public override string ToString()
@@ -36,7 +36,7 @@ namespace Scratch
         {
             if (myMemory == null)
             {
-                throw new ArgumentNullException("myMemory");
+                throw new ArgumentNullException(nameof(myMemory));
             }
 
             return myMemory.ToString();

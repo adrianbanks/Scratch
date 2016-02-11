@@ -30,7 +30,7 @@ namespace Scratch
         {
             AppDomain.MonitoringIsEnabled = true;
             this.message = message;
-            this.cpuTime = AppDomain.CurrentDomain.MonitoringTotalProcessorTime;
+            cpuTime = AppDomain.CurrentDomain.MonitoringTotalProcessorTime;
         }
 
         ~MyCpuTimer()

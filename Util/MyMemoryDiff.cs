@@ -30,7 +30,7 @@ namespace Scratch
             memoryAllocated = domain.MonitoringTotalAllocatedMemorySize;
             memoryInUse = domain.MonitoringSurvivedMemorySize;
             this.message = message;
-            this.start = MyMemory.Now();
+            start = MyMemory.Now();
         }
 
         ~MyMemoryDiff()

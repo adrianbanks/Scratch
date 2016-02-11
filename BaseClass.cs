@@ -19,7 +19,7 @@ namespace Scratch
         /// </summary>
         protected static void WL(object text, params object[] args)
         {
-            string textStr = (text == null) ? "<null>" : text.ToString();
+            string textStr = text?.ToString() ?? "<null>";
 
             if (args == null || args.Length == 0)
             {

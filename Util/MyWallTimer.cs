@@ -26,7 +26,7 @@ namespace Scratch
         public MyWallTimer(string message)
         {
             this.message = message;
-            this.stopwatch = Stopwatch.StartNew();
+            stopwatch = Stopwatch.StartNew();
         }
 
         ~MyWallTimer()
