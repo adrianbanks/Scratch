@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyCompany("www.adrianbanks.co.uk")]
 [assembly: AssemblyProduct("Scratch")]
-[assembly: AssemblyCopyright("Copyright ©2010 Adrian Banks")]
+[assembly: AssemblyCopyright("Copyright ©2010-2016 Adrian Banks")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: AssemblyConfiguration("")]
