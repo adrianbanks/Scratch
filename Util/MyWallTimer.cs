@@ -48,6 +48,8 @@ namespace Scratch
 
                 if (disposing)
                 {
+                    Console.WriteLine();
+
                     if (!string.IsNullOrEmpty(message))
                     {
                         Console.Write("{0} - ", message);
