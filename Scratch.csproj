@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseClass.cs" />
+    <Compile Include="Util\Iterations.cs" />
     <Compile Include="Util\Options.cs" />
     <Compile Include="Util\GCLog.cs" />
     <Compile Include="Util\GCNotify.cs" />
