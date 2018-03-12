@@ -4,5 +4,8 @@
 *.suo
 *.user
 *.ncrunchsolution
+*.ncrunchproject
+_NCrunch_Scratch/
 _ReSharper.*
+.idea/
 packages/*
