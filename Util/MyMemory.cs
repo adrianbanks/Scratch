@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Globalization;
 
 namespace Scratch
 {
@@ -22,14 +21,14 @@ namespace Scratch
 
         private MyMemory()
         {
-            Process processInfo = Process.GetCurrentProcess();
+            var processInfo = Process.GetCurrentProcess();
             PeakMemory = processInfo.PeakWorkingSet64;
             CurrentMemory = processInfo.WorkingSet64;
         }
 
         public override string ToString()
         {
-            return string.Format(CultureInfo.CurrentCulture, "Peak Memory = {0:N0} bytes, Current Memory = {1:N0} bytes", PeakMemory, CurrentMemory);
+            return $"Peak Memory = {PeakMemory:N0} bytes, Current Memory = {CurrentMemory:N0} bytes";
         }
 
         public static implicit operator string(MyMemory myMemory)

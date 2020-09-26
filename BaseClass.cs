@@ -19,7 +19,7 @@ namespace Scratch
         /// </summary>
         protected static void WL(object text, params object[] args)
         {
-            string textStr = text?.ToString() ?? "<null>";
+            var textStr = text?.ToString() ?? "<null>";
 
             if (args == null || args.Length == 0)
             {
@@ -66,7 +66,7 @@ namespace Scratch
 
             WL(new string('-', 70));
 
-            Exception baseException = e.GetBaseException();
+            var baseException = e.GetBaseException();
 
             if (baseException != e)
             {

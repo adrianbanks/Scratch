@@ -16,34 +16,30 @@ namespace Scratch
         /// </summary>
         public static void Run(int numberOfIterations, Action action, Action betweenEachAction = null, TimingMethod timingMethod = TimingMethod.None)
         {
-            using (var timer = CreateTimer(timingMethod))
+            using var timer = CreateTimer(timingMethod);
+            
+            for (var i = 1; i <= numberOfIterations; i++)
             {
-                for (int i = 1; i <= numberOfIterations; i++)
-                {
-                    action();
+                action();
 
-                    if (i < numberOfIterations)
-                    {
-                        betweenEachAction?.Invoke();
-                    }
+                if (i < numberOfIterations)
+                {
+                    betweenEachAction?.Invoke();
                 }
             }
         }
 
         private static IDisposable CreateTimer(TimingMethod timingMethod)
         {
-            switch (timingMethod)
+            return timingMethod switch
             {
-                case TimingMethod.WallClock:
-                    return new MyWallTimer();
-                case TimingMethod.CPU:
-                    return new MyCpuTimer();
-                default:
-                    return new NullTimer();
-            }
+                TimingMethod.WallClock => new MyWallTimer(),
+                TimingMethod.CPU => new MyCpuTimer(),
+                _ => new NullTimer()
+            };
         }
 
-        private class NullTimer : IDisposable
+        private sealed class NullTimer : IDisposable
         {
             public void Dispose()
             {}

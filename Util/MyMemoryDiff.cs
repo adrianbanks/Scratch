@@ -26,7 +26,7 @@ namespace Scratch
         public MyMemoryDiff(string message)
         {
             AppDomain.MonitoringIsEnabled = true;
-            AppDomain domain = AppDomain.CurrentDomain;
+            var domain = AppDomain.CurrentDomain;
             memoryAllocated = domain.MonitoringTotalAllocatedMemorySize;
             memoryInUse = domain.MonitoringSurvivedMemorySize;
             this.message = message;
@@ -50,18 +50,18 @@ namespace Scratch
             {
                 if (disposing)
                 {
-                    AppDomain domain = AppDomain.CurrentDomain;
-                    long allocated = domain.MonitoringTotalAllocatedMemorySize - memoryAllocated;
-                    long survived = domain.MonitoringSurvivedMemorySize - memoryInUse;
-                    MyMemory end = MyMemory.Now();
+                    var domain = AppDomain.CurrentDomain;
+                    var allocated = domain.MonitoringTotalAllocatedMemorySize - memoryAllocated;
+                    var survived = domain.MonitoringSurvivedMemorySize - memoryInUse;
+                    var end = MyMemory.Now();
 
                     if (!string.IsNullOrEmpty(message))
                     {
-                        Console.WriteLine("{0} - ", message);
+                        Console.WriteLine($@"{message} - ");
                     }
 
-                    Console.WriteLine("Memory Difference = {0:N0} bytes", end.CurrentMemory - start.CurrentMemory);
-                    Console.WriteLine("Total Allocated = {0:N0} bytes, Survived GCs = {1:N0} bytes", allocated, survived);
+                    Console.WriteLine($@"Memory Difference = {end.CurrentMemory - start.CurrentMemory:N0} bytes");
+                    Console.WriteLine($@"Total Allocated = {allocated:N0} bytes, Survived GCs = {survived:N0} bytes");
                     disposed = true;
                 }
             }

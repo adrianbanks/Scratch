@@ -52,10 +52,10 @@ namespace Scratch
 
                     if (!string.IsNullOrEmpty(message))
                     {
-                        Console.Write("{0} - ", message);
+                        Console.Write($@"{message} - ");
                     }
 
-                    Console.WriteLine("Elapsed Time: {0}", stopwatch.Elapsed);
+                    Console.WriteLine($@"Elapsed Time: {stopwatch.Elapsed}");
                     disposed = true;
                 }
             }

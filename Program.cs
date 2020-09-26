@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Scratch
 {
-    public sealed class Program
+    public static class Program
     {
         private static readonly bool winForms = bool.Parse("false");
 
@@ -18,11 +18,9 @@ namespace Scratch
             }
             else
             {
-                MyClass myC = new MyClass();
-
                 try
                 {
-                    myC.Go();
+                    new MyClass().Go();
                 }
                 catch (Exception e)
                 {

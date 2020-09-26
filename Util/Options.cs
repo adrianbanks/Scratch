@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace Scratch
@@ -13,16 +12,16 @@ namespace Scratch
         /// <param name="options">A list of possible options.</param>
         internal static T GetOption<T>(string optionText, params Option<T>[] options)
         {
-            Dictionary<ConsoleKey, Func<T>> funcMap = options.ToDictionary(opt => opt.Key, opt => opt.Action);
+            var funcMap = options.ToDictionary(opt => opt.Key, opt => opt.Action);
             Console.WriteLine();
 
-            foreach (Option<T> option in options)
+            foreach (var option in options)
             {
-                Console.WriteLine("{0}: {1}", option.Key, option.Description);
+                Console.WriteLine($@"{option.Key}: {option.Description}");
             }
 
             Console.WriteLine();
-            Console.Write(optionText + " :> ");
+            Console.Write($@"{optionText} :> ");
 
             ConsoleKeyInfo readKey;
 
@@ -34,8 +33,8 @@ namespace Scratch
 
             Console.WriteLine();
             Console.WriteLine();
-            Func<T> func = funcMap[readKey.Key];
-            T ret = func();
+            var func = funcMap[readKey.Key];
+            var ret = func();
             return ret;
         }
     }

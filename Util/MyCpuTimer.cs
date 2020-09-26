@@ -48,7 +48,7 @@ namespace Scratch
         {
             if (!disposed)
             {
-                TimeSpan elapsed = AppDomain.CurrentDomain.MonitoringTotalProcessorTime - cpuTime;
+                var elapsed = AppDomain.CurrentDomain.MonitoringTotalProcessorTime - cpuTime;
 
                 if (disposing)
                 {
@@ -56,10 +56,10 @@ namespace Scratch
 
                     if (!string.IsNullOrEmpty(message))
                     {
-                        Console.Write("{0} - ", message);
+                        Console.Write($@"{message} - ");
                     }
 
-                    Console.WriteLine("CPU Time: {0}", elapsed);
+                    Console.WriteLine($@"CPU Time: {elapsed}");
                     disposed = true;
                 }
             }
